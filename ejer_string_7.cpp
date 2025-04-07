@@ -10,15 +10,19 @@ int main () {
 	printf ("ingrese la segunda palabra");
 	scanf ("%s", palabra2);
 	int longitud2 = strlen(palabra2);
-	if (longitud1 = longitud2){
+	if (longitud1 == longitud2){
 	    printf ("las longitudes son iguales ");
 		int n = longitud1;
 		int i;
 		int j = 0;
 		int resultado;
 		int igualdad;
-		char ordenado1 = std::sort(palabra1, palabra1);
-		char ordenado2 = std::sort(palabra2.begin(), palabra2.end());
+		char aux1 [20];
+		char aux2 [20];
+		strcpy (aux1, palabra1);
+		strcpy (aux2, palabra2);
+		std::sort(aux1, aux1 + longitud1);
+		std::sort(aux2, aux2 + longitud2);
 		/*
 		for (i=0;i<n;i++){
 			do{
@@ -36,10 +40,10 @@ int main () {
     
         }
         */
-		if (strcmp (ordenado1, ordenado2) == 0){
+		if (strcmp (aux1, aux2) == 0){
 			printf ("las palabras son un anagrama");
 		}
-		else if (strcmp (ordenado1, ordenado2) != 0) {
+		else if (strcmp (aux1, aux2) != 0) {
 			printf ("las palabras no son un anagrama");
 		}
 	}
